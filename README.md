@@ -5,7 +5,7 @@
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io)
 
 Ein wissenschaftlich fundiertes Persönlichkeits- und Kompatibilitäts-System für die AI-Ära mit **integriertem Machine Learning**, basierend auf:
-- **Big Five Psychologie** (40+ Jahre Forschung)
+- **Big Five Psychologie** 
 - **Modern Work & Social Types** (5 Work Types × 4 Social Types)
 - **Functional Archetypes** (Yoav Rechtman's Framework)
 - **ML-Engines** für NLP, Job-Recommendations, Team-Analyse & Role-Prediction
