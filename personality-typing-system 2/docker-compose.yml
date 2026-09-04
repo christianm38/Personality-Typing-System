@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: personality-db
+    environment:
+      POSTGRES_USER: personality_user
+      POSTGRES_PASSWORD: secure_password_here
+      POSTGRES_DB: personality_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U personality_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Streamlit Application
+  app:
+    build: .
+    container_name: personality-app
+    environment:
+      DATABASE_URL: postgresql://personality_user:secure_password_here@postgres:5432/personality_db
+      DEBUG: "False"
+      APP_ENV: production
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./app:/app/app
+      - ./logs:/app/logs
+      - ./data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # pgAdmin (Optional - for database management)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: personality-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@personality-typing.com
+      PGADMIN_DEFAULT_PASSWORD: admin_password
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: personality-network
