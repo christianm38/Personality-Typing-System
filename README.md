@@ -74,7 +74,7 @@ Das System beinhaltet **4 vollständige ML-Engines** für fortgeschrittene Analy
 - Confidence Levels und Reasoning
 - **Einsatz:** Career Planning und Internal Mobility
 
-**📚 Vollständiger ML-Guide:** Siehe `ML_FEATURES.md` (500+ Zeilen mit Beispielen)
+**📚 Vollständiger ML-Guide:** Siehe `ML_FEATURES.md` 
 
 ---
 
@@ -196,18 +196,17 @@ Das System beinhaltet **4 vollständige ML-Engines** für fortgeschrittene Analy
 git clone https://github.com/christianm38/personality-typing-system.git
 cd personality-typing-system
 
-# 2. Virtual Environment
+# 2. IN DEN UNTERORDNER WECHSELN
+cd "personality-typing-system 3"
+
+# 3. Virtual Environment
 python -m venv venv
 source venv/bin/activate  # Mac/Linux
 # oder
 venv\Scripts\activate  # Windows
 
-# 3. Dependencies
+# 4. Dependencies
 pip install -r requirements.txt
-
-# 4. Environment Setup
-cp .env.example .env
-# Bearbeite .env mit deinen Einstellungen
 
 # 5. Database Initialize
 python app/database/init_db.py
