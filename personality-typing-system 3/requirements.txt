@@ -1,13 +1,9 @@
-# Core Dependencies
-streamlit==1.28.1
-pandas==2.0.3
-numpy==1.24.3
-scikit-learn==1.3.0
-scipy==1.11.2
+# Core - Streamlit
+streamlit==1.32.0
 
-# NLP & Text Processing
-nltk==3.8.1
-textblob==0.17.1
+# ML & Math (Pre-compiled versions)
+numpy==1.24.0
+scikit-learn==1.3.0
 
 # Database
 SQLAlchemy==2.0.20
@@ -19,14 +15,8 @@ pillow==10.0.0
 
 # Utilities
 python-dotenv==1.0.0
-pydantic==2.3.0
 requests==2.31.0
-
-# Date/Time
 python-dateutil==2.8.2
 
-# Async/Concurrency
-aiofiles==23.1.0
-
-# UUID
-uuid6==1.0.3
+# NLP
+nltk==3.8.1
